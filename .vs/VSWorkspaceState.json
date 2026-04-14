@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\scripts",
+    "\\.github\\workflows",
+    "\\logs",
+    "\\src",
+    "\\tests"
+  ],
+  "SelectedNode": "\\src\\entropy_redundancy.cpp",
+  "PreviewInSolutionExplorer": false
+}

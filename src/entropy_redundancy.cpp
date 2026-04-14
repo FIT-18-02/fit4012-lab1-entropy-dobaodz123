@@ -1,7 +1,9 @@
 #include <cmath>
 #include <iostream>
 #include <map>
+#include <unordered_set>
 #include <string>
+
 
 using namespace std;
 
@@ -24,22 +26,26 @@ double calculate_entropy(const string &text) {
 }
 
 double calculate_redundancy(const string &text, int alphabet_size = 256) {
-    // TODO(student): implement redundancy = log2(N) - H(X)
-    // Hint: use calculate_entropy(text)
-    (void)text;
-    (void)alphabet_size;
-    return -1.0;
+    double entropy = calculate_entropy(text);
+    return log2(alphabet_size) - entropy;
 }
 
 int main() {
-    string input;
-    cout << "Enter a string of characters: ";
-    getline(cin, input);
+    string s1 = "aaaaaa";
+    string s2 = "abcabc";
+    string s3 = "hello123";
 
-    double entropy = calculate_entropy(input);
-    double redundancy = calculate_redundancy(input);
+    cout << "String 1: " << s1 << endl;
+    cout << "Entropy: " << calculate_entropy(s1) << endl;
+    cout << "Redundancy: " << calculate_redundancy(s1) << endl << endl;
 
-    cout << "Entropy: " << entropy << '\n';
-    cout << "Redundancy: " << redundancy << '\n';
+    cout << "String 2: " << s2 << endl;
+    cout << "Entropy: " << calculate_entropy(s2) << endl;
+    cout << "Redundancy: " << calculate_redundancy(s2) << endl << endl;
+
+    cout << "String 3: " << s3 << endl;
+    cout << "Entropy: " << calculate_entropy(s3) << endl;
+    cout << "Redundancy: " << calculate_redundancy(s3) << endl;
+
     return 0;
-}
+ 
