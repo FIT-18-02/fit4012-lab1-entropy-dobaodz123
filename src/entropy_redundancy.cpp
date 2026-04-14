@@ -3,20 +3,16 @@
 #include <map>
 #include <unordered_set>
 #include <string>
-
-
 using namespace std;
 
 double calculate_entropy(const string &text) {
     if (text.empty()) {
         return 0.0;
     }
-
     map<char, int> freq;
     for (char c : text) {
         freq[c]++;
     }
-
     double entropy = 0.0;
     for (const auto &pair : freq) {
         double p = static_cast<double>(pair.second) / text.size();
@@ -48,4 +44,4 @@ int main() {
     cout << "Redundancy: " << calculate_redundancy(s3) << endl;
 
     return 0;
- 
+}          // ← thêm dấu } này
